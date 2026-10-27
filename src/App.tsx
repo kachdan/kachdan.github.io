@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, Moon, Sun } from "lucide-react";
+import { ArrowRight, ExternalLink, Moon, Sun } from "lucide-react";
 import danPhoto from "@/assets/Dan_Kach.png";
 import screenCountLight from "@/assets/screen-count-light.png";
 import screenCountDark from "@/assets/screen-count-dark.png";
@@ -152,6 +152,18 @@ export function Shell({ children }: { children: React.ReactNode }) {
 
 /* ─── Hero ────────────────────────────────────────────────────── */
 
+/* ─── New tab marker ───────────────────────────────────────────────────── */
+
+/** Lucide external-link icon plus screen reader text, for every link that opens a new tab. */
+function NewTabIcon({ size = 14 }: { size?: number }) {
+  return (
+    <>
+      <ExternalLink width={size} height={size} strokeWidth={2} aria-hidden="true" className="shrink-0" />
+      <span className="sr-only">(opens in a new tab)</span>
+    </>
+  );
+}
+
 function Hero() {
   const contact = [
     { label: "EMAIL", value: "kachdan@gmail.com", href: "mailto:kachdan@gmail.com" },
@@ -163,7 +175,9 @@ function Hero() {
     },
     { label: "BASED", value: "Charlotte, North Carolina" },
     { label: "OPEN TO", value: "Remote, or hybrid in Charlotte" },
-  ] as { label: string; value: string; href?: string; external?: boolean }[];
+    // Opens the PDF in a new tab. No download attribute, so it shows inline.
+    { label: "RESUME", value: "View PDF", href: "/Dan_Kachula_Resume.pdf", external: true, rel: "noopener" },
+  ] as { label: string; value: string; href?: string; external?: boolean; rel?: string }[];
   return (
     <header className="pt-32 pb-28 md:pt-44 md:pb-36">
       <Shell>
@@ -219,7 +233,7 @@ function Hero() {
 
         {/* Contact row: full width beneath both columns */}
         <div id="contact" className="section-anchor mt-12 border-t border-rule-strong pt-8">
-          <dl className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
+          <dl className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-5 lg:gap-10">
             {contact.map((c) => (
               <div key={c.label} className="flex flex-col gap-1.5">
                 <dt className="text-[12px] leading-[1.5] uppercase tracking-[0.06em] text-caption">
@@ -229,10 +243,11 @@ function Hero() {
                   {c.href ? (
                     <a
                       href={c.href}
-                      {...(c.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                      className="inline-flex min-h-[44px] items-center underline decoration-rule underline-offset-4 transition-colors hover:text-accent hover:decoration-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent md:min-h-0"
+                      {...(c.external ? { target: "_blank", rel: c.rel ?? "noopener noreferrer" } : {})}
+                      className="inline-flex min-h-[44px] items-center gap-1.5 underline decoration-rule underline-offset-4 transition-colors hover:text-accent hover:decoration-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent md:min-h-0"
                     >
                       {c.value}
+                      {c.external && <NewTabIcon />}
                     </a>
                   ) : (
                     c.value
@@ -310,9 +325,10 @@ function Testimonials() {
             href="https://linkedin.com/in/kachdan"
             target="_blank"
             rel="noopener noreferrer"
-            className="underline decoration-white/30 underline-offset-4 transition-colors hover:text-accent hover:decoration-accent dark:decoration-rule"
+            className="inline-flex items-center gap-1 underline decoration-white/30 underline-offset-4 transition-colors hover:text-accent hover:decoration-accent dark:decoration-rule"
           >
             linkedin.com/in/kachdan
+            <NewTabIcon size={12} />
           </a>
         </p>
       </Shell>
@@ -1259,8 +1275,10 @@ function TopNav() {
               rel="noopener"
               className="flex h-full items-center text-[13px] leading-none text-caption transition-colors hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-accent"
             >
-              Resume
-              <span className="sr-only"> (opens in a new tab)</span>
+              <span className="inline-flex items-center gap-1">
+                Resume
+                <NewTabIcon size={12} />
+              </span>
             </a>
           </li>
         </ul>

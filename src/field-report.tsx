@@ -34,7 +34,7 @@ function ScreenGroup({
                 target="_blank"
                 rel="noopener"
                 className="block rounded-[8px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
-                aria-label={`${s.label}, open full size`}
+                aria-label={`${s.label}, open full size in a new tab`}
               >
                 <img
                   src={s.src}
