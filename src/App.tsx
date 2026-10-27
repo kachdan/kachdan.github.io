@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Moon, Sun } from "lucide-react";
+import { ArrowRight, Moon, Sun } from "lucide-react";
 import danPhoto from "@/assets/Dan_Kach.png";
 import screenCountLight from "@/assets/screen-count-light.png";
 import screenCountDark from "@/assets/screen-count-dark.png";
@@ -10,6 +10,7 @@ import screenAvailabilityDark from "@/assets/screen-availability-dark.png";
 import screenBattingLight from "@/assets/screen-batting-light.png";
 import screenBattingDark from "@/assets/screen-batting-dark.png";
 import Reveal from "./components/Reveal";
+import { foremanPhone, officeDesktop, screenShadow } from "./components/fieldReportScreens";
 
 /** Instantly show every pending scroll reveal before an anchor jump. */
 function revealAll() {
@@ -27,7 +28,7 @@ import {
 
 /* ─── Dark mode hook ──────────────────────────────────────────────────── */
 
-function useDarkMode() {
+export function useDarkMode() {
   // Always default to dark mode for every visitor. No stored preference or
   // system preference is read on load, and the choice is never persisted.
   const [isDark, setIsDark] = useState(true);
@@ -59,7 +60,7 @@ function useDarkMode() {
 
 /* ─── Dark mode toggle ────────────────────────────────────────────────── */
 
-function DarkModeToggle({ isDark, toggle }: { isDark: boolean; toggle: () => void }) {
+export function DarkModeToggle({ isDark, toggle }: { isDark: boolean; toggle: () => void }) {
   /*
    * Pill is 52 × 30px, knob is 24 × 24px, padding 3px all sides.
    * Dark mode has no border, so content width = 46px; knob travel = 46 − 24 = 22px.
@@ -141,7 +142,7 @@ function DarkModeToggle({ isDark, toggle }: { isDark: boolean; toggle: () => voi
 
 /* ─── Layout shell ────────────────────────────────────────────────────── */
 
-function Shell({ children }: { children: React.ReactNode }) {
+export function Shell({ children }: { children: React.ReactNode }) {
   return (
     <div className="mx-auto w-full max-w-[1440px] px-6 sm:px-10 lg:px-20">
       {children}
@@ -855,6 +856,246 @@ function PitchCountApp() {
   );
 }
 
+
+/* ─── Case Study 04: Field reporting app ──────────────────────────────── */
+
+function FieldScreenStrip() {
+  const picks = [foremanPhone[0], foremanPhone[2], foremanPhone[3], foremanPhone[7]];
+  return (
+    <Reveal className="w-full">
+      <div className="flex flex-col items-center gap-12 lg:grid lg:grid-cols-4 lg:items-start lg:gap-x-[5%] lg:gap-y-0">
+        {picks.map((s) => (
+          <figure key={s.label} className="w-[272px] lg:w-full">
+            <img
+              src={s.src}
+              alt={s.alt}
+              width={s.w}
+              height={s.h}
+              loading="lazy"
+              className={`block h-auto w-full ${screenShadow}`}
+            />
+            <figcaption className="mt-4 text-[12px] leading-[1.5] text-caption">
+              {s.label}
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </Reveal>
+  );
+}
+
+function OfficeScreen() {
+  const s = officeDesktop[0];
+  return (
+    <Reveal className="w-full">
+      <figure>
+        <img
+          src={s.src}
+          alt={s.alt}
+          width={s.w}
+          height={s.h}
+          loading="lazy"
+          className={`block h-auto w-full ${screenShadow}`}
+        />
+        <figcaption className="mt-4 text-[12px] leading-[1.5] text-caption">
+          Office dashboard · {s.label}
+        </figcaption>
+      </figure>
+    </Reveal>
+  );
+}
+
+function FieldReportApp() {
+  return (
+    <section id="case-field-report" className="section-anchor border-t border-rule-strong py-24 md:py-32">
+      <Shell>
+        <div className="flex flex-col gap-16">
+          <Reveal>
+            <Eyebrow>CASE STUDY 04&nbsp;&nbsp;·&nbsp;&nbsp;CLIENT WORK</Eyebrow>
+            <TagChips tags={workCards[3].tags} className="mt-4" />
+            <h2 className="mt-5 max-w-[18ch] font-serif font-semibold text-heading text-[42px] leading-[1.1] sm:text-[50px] md:text-[62px]">
+              The report was never the problem. Sharing it was.
+            </h2>
+            <p className="mt-5 max-w-[800px] text-[18px] leading-[1.65] text-body">
+              A commercial construction subcontractor in Charlotte, with about 10
+              staff, 3 foremen running daily crews and 7 active job sites. The
+              owner wanted a written end-of-day report from every foreman, every
+              workday, with photos filed into each job's folder. I designed and
+              built it end to end, from the first plan to a real report sent from
+              a company iPhone in 6 days.
+            </p>
+          </Reveal>
+
+          <MetaStrip
+            items={[
+              { label: "TIMEFRAME", value: "6 days, October 2026" },
+              {
+                label: "MY ROLE",
+                value:
+                  "Sole designer and builder. Discovery, design, the working app, Microsoft 365 setup, device rollout, testing",
+              },
+              {
+                label: "WORKED WITH",
+                value:
+                  "The Owner, the Operations Manager as product owner, and Claude in the desktop app",
+              },
+              {
+                label: "TOOLS",
+                value: "Figma, Claude, GitHub, Microsoft 365, SharePoint, Apple Business",
+              },
+            ]}
+          />
+
+          <MetricBand
+            metrics={[
+              {
+                figure: "6",
+                caption: "Days from the first plan to a real report on a company iPhone",
+                large: true,
+              },
+              { figure: "171", caption: "Automated checks passing before rollout", large: true },
+              {
+                figure: "0",
+                caption: "New paid software. It runs on the Microsoft 365 they already had",
+                large: true,
+              },
+            ]}
+          />
+
+          <FieldScreenStrip />
+
+          <ProseSection heading="Before: paper, then a text thread">
+            It started on paper, with forms the foremen filled out. Then everyone
+            moved to text messages, so every report arrived as a text and sat on
+            the Owner's phone among everything else. Nobody could see at a glance
+            who had reported, or what a site needed tomorrow.
+          </ProseSection>
+
+          <ProseSection heading="The real problem was the general contractor">
+            Every general contractor expects a simple PDF report for their
+            project, and there was no way to turn a thread of texts from 3
+            foremen into one. Now the Owner opens a report on his phone, iPad or
+            computer, taps Download PDF, and sends it to the GC by text or email.
+          </ProseSection>
+
+          <ProseSection heading="Listening between the lines">
+            The Operations Manager owned the ask. Most of the requirements came
+            through texts and conversations, so I listened for the pain points
+            underneath and asked leading questions until the brief was clear. A
+            foreman had to finish in under 3 minutes on a phone, talking instead
+            of typing, with tap targets big enough for gloves. It had to use the
+            Microsoft accounts they already had, with no new logins, and file
+            everything into the job folders the office already used. A paid field
+            reporting app was considered and turned down.
+          </ProseSection>
+
+          <ProseSection heading="Pick a job, don't type it">
+            The Operations Manager first wanted foremen to type the job name. Two
+            foremen typing the same job two slightly different ways would create
+            two jobs and split one project's reports across two folders. I
+            suggested a pre-filled job list instead, since picking is faster than
+            typing and can't produce a typo. After seeing it, she said it was
+            better than she had imagined. New jobs take a few seconds to add from
+            the office dashboard, and a foreman can request one that's missing,
+            which the office approves or merges.
+          </ProseSection>
+
+          <ProseSection heading="A rapid assessment, on my phone">
+            I designed in Figma first, set up a small design system Claude could
+            reuse, and turned the screens into a clickable prototype on my phone
+            and an iPad. When the Owner came by, I handed him my phone and asked
+            him to be a foreman and fill out a report. He found the voice-to-text
+            hint under the fields on his own and used it. When he got to photos,
+            he said he sometimes shoots video, because it shows the work better.
+            Video was in the app the same day: up to 5 videos per report, 3
+            minutes each, alongside up to 30 photos.
+          </ProseSection>
+
+          <ProseSection heading="What got cut">
+            Hours and crew count were added early, then cut by the Operations
+            Manager to keep the report under 3 minutes. Yes and no answers became
+            buttons, after a test showed that tapping No opened the keyboard.
+            Each answer now redraws only its own card, because before the fix the
+            page could jump 170 pixels under the user's thumb.
+          </ProseSection>
+
+          <ProseSection heading="One app, two jobs">
+            Foremen get a short report: date, job, work done as a numbered list,
+            3 yes or no checks for materials, delays and safety, tomorrow's plan,
+            and photos and videos. A forgotten day can be sent up to 30 days late,
+            and the office sees it marked as late. The office gets a dashboard:
+            who reported today and who hasn't, what each site needs, every report
+            with search and filters, the job list, and a weekly view of who
+            reported each day.
+          </ProseSection>
+
+          <OfficeScreen />
+
+          <ProseSection heading="Inside their Microsoft 365">
+            Everyone signs in with the Microsoft account they already use for
+            email. Reports, photos and videos live in their own SharePoint, filed
+            into the existing job folders, so their data never leaves their
+            tenant. What each person sees comes from their Microsoft job title, so
+            a new foreman lands on the right screen without any setup. Dynamic
+            groups would have needed a paid tier, and reading the job title gave
+            the same result for free. Apple Business puts the app on company
+            iPhones and iPads as a home screen icon, with no App Store.
+          </ProseSection>
+
+          <ProseSection heading="Testing it as a foreman">
+            Automated checks prove the code does what it says. They can't tell you
+            what it's like to fill out a report at the end of a long day on a job
+            site. So I enrolled a real company iPhone through Apple Business, set
+            it up the way a foreman's phone would be, and signed in with a
+            dedicated test account through Microsoft Authenticator. Then I used it
+            the way a foreman would, looking for anything slow, confusing or easy
+            to get wrong, including going back to send a report for a day I had
+            missed. I sent a real report with photos and a video, and it appeared
+            on the office dashboard right away, filed in the right job folder.
+            That pass found a couple of bugs the automated checks hadn't. Once
+            they were fixed and the test data was cleared out, it went to the
+            company's phones.
+          </ProseSection>
+
+          <ProseSection heading="Where it landed">
+            A working first version, tested end to end and deployed to the
+            company's phones. 126 automated checks across phone, iPad and
+            desktop, and 45 more against a simulated Microsoft and SharePoint. An
+            independent QA pass found more than 10 issues, all fixed, including
+            reports lost when a phone's storage was full and drafts wiped at
+            midnight. A pilot with one foreman is next, so there are no usage
+            numbers yet, and I won't claim any until there are.
+          </ProseSection>
+
+          <Reveal>
+            <a
+              href="/field-report/"
+              className="group inline-flex min-h-[44px] items-center gap-2 text-[16px] font-medium text-accent underline decoration-accent/40 underline-offset-4 transition-colors hover:decoration-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+            >
+              See every screen
+              <ArrowRight
+                width={18}
+                height={18}
+                strokeWidth={2}
+                aria-hidden="true"
+                className="transition-transform group-hover:translate-x-0.5"
+              />
+            </a>
+          </Reveal>
+
+          <div className="mt-8 border-t border-rule-strong pt-8">
+            <p className="text-[13px] leading-[1.65] text-caption">
+              Designed in Figma and built with Claude in the desktop app. Client
+              work shared without the client's name. The screens use an invented
+              company, Ridgeline Interiors, with invented people and jobs.
+            </p>
+          </div>
+        </div>
+      </Shell>
+    </section>
+  );
+}
+
 /* ─── Work index, chips, nav ───────────────────────────────────────── */
 
 const workCards = [
@@ -875,6 +1116,12 @@ const workCards = [
     heading: "Case Study 03 · Designing with AI",
     tags: ["AI-assisted build", "Claude and Claude Code", "0 to 1", "Field tested"],
     line: "34 tickets shipped in 11 days, live and in use at real games",
+  },
+  {
+    href: "#case-field-report",
+    heading: "Case Study 04 · Field reporting app",
+    tags: ["Client project", "Field operations", "Microsoft 365", "0 to 1"],
+    line: "From a text thread to a one-tap PDF for the general contractor, designed and shipped in 6 days",
   },
 ];
 
@@ -897,7 +1144,7 @@ function WorkIndex() {
   return (
     <section id="work" className="section-anchor pb-8 md:pb-12">
       <Shell>
-        <ul className="grid grid-cols-1 gap-6 md:grid-cols-3">
+        <ul className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {workCards.map((c) => (
             <li key={c.href}>
               <a
@@ -924,6 +1171,7 @@ const navLinks = [
   { id: "case-analyst-platform", label: "Analyst platform" },
   { id: "case-design-system", label: "Design system" },
   { id: "case-ai-build", label: "Designing with AI" },
+  { id: "case-field-report", label: "Field reporting" },
   { id: "recommendations", label: "Recommendations" },
   { id: "contact", label: "Contact" },
 ];
@@ -940,7 +1188,7 @@ function TopNav() {
       // A section counts as current once its top passes 40% of the way down
       // the screen. At the very bottom the last section can never get that
       // high, so it wins whenever the page is scrolled all the way down.
-      const sections = navLinks.slice(0, 5);
+      const sections = navLinks.slice(0, 6);
       const line = window.innerHeight * 0.4;
       let current: string | null = null;
       for (const l of sections) {
@@ -1054,6 +1302,7 @@ export default function App() {
       <AnalystPlatform />
       <DesignSystemPlatform />
       <PitchCountApp />
+      <FieldReportApp />
       <Testimonials />
     </div>
   );
