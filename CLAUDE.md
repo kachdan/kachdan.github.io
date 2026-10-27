@@ -25,3 +25,9 @@ This is Dan Kachula's public portfolio. Copy and claims are approved by Dan word
 - Pull before editing. Another session may have pushed changes.
 - Pushing to `main` runs the GitHub Actions workflow and publishes to kachdan.com in about a minute. Check the Actions tab if a change does not appear.
 - The domain is managed in Spaceship. kachdan.com points at GitHub Pages, and HTTPS is enforced. Don't change DNS without asking Dan.
+
+## Resume
+
+- The public resume is `public/Dan_Kachula_Resume.pdf`, served at kachdan.com/Dan_Kachula_Resume.pdf. The Resume link in the top menu opens it in a new tab. Never add a download attribute.
+- It must match Dan's current resume exactly, except it has no phone number. Email, LinkedIn, kachdan.com and Charlotte, NC stay.
+- When Dan updates his resume, replace this file with the new version, keeping the same filename and path. Run `python3 scripts/check_resume.py` before pushing. The deploy also runs it and stops if a phone number appears in the text or metadata.

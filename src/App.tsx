@@ -1250,6 +1250,19 @@ function TopNav() {
               </a>
             </li>
           ))}
+          <li className="h-full">
+            {/* Opens the PDF in a new tab. No download attribute, so the
+                browser shows it inline and nothing lands on the visitor's computer. */}
+            <a
+              href="/Dan_Kachula_Resume.pdf"
+              target="_blank"
+              rel="noopener"
+              className="flex h-full items-center text-[13px] leading-none text-caption transition-colors hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-accent"
+            >
+              Resume
+              <span className="sr-only"> (opens in a new tab)</span>
+            </a>
+          </li>
         </ul>
       </div>
     </nav>
