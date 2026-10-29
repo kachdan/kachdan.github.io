@@ -205,16 +205,15 @@ function Hero() {
             </h1>
             <div className="mt-6 max-w-[800px] space-y-4">
               <p className="text-[18px] leading-[1.65] text-body">
-                I have spent about 20 years making things by hand, most recently 6
-                years at Moody's Ratings, where I designed internal platforms for
-                people doing regulated work and owned the design system that 26
-                designers built on. I use AI as leverage rather than as a shortcut,
-                because execution getting cheap is exactly what makes judgment and
-                craft worth more.
+                I have spent about 20 years making things by hand, the last 6 at Moody's
+                Ratings, designing internal platforms for people doing
+                regulated work and owning the design system 26 designers built
+                on. I use AI every day, and the faster the execution gets the
+                more the judgment and the craft matter.
               </p>
               <p className="text-[18px] leading-[1.65] text-heading">
-                The work below is about how I think and how I work with people. The
-                screens are evidence, not the point.
+                The work below is mostly about how I think and how I work with people, the
+                screens are there to back it up.
               </p>
             </div>
           </div>
@@ -295,9 +294,8 @@ function Testimonials() {
             In other people's words
           </h2>
           <p className="mt-5 text-[17px] leading-[1.65] text-[#9ba2aa] dark:text-body">
-            Every portfolio claims collaboration. These are unedited
-            recommendations written by the people who managed me, partnered with
-            me and shipped alongside me, across 12 years and 3 companies.
+            These are unedited recommendations from people who managed me, partnered with
+            me and shipped work alongside me, across 12 years and 3 companies.
           </p>
         </Reveal>
         <div className="mt-14 grid grid-cols-1 gap-5 md:grid-cols-3">
@@ -350,11 +348,11 @@ function AnalystPlatform() {
               Digitizing the process would have saved nothing
             </h2>
             <p className="mt-5 max-w-[800px] text-[18px] leading-[1.65] text-body">
-              Moody's Ratings. An internal platform consolidating credit review,
-              deal intake and rating committee workflows. I was the sole
-              designer, end to end, from discovery through launch and post
-              release iteration. The users were employees doing regulated work
-              against deadlines, not consumers.
+              An internal platform at Moody's Ratings that pulled credit review, deal intake
+              and rating committee work into one place. I was the only
+              designer on it, from discovery through launch and the releases
+              after. The people using it were employees doing regulated work
+              on deadlines.
             </p>
           </Reveal>
 
@@ -399,10 +397,7 @@ function AnalystPlatform() {
 
           <ProseSection heading="What was actually happening">
             Analysts were running credit review, deal intake and rating
-            committee prep across documents, spreadsheets and email. No single
-            step was broken, which is why nobody had filed it as a problem. The
-            cost was sitting in the seams between the steps, and seams do not
-            show up in a bug queue.
+            committee prep across documents, spreadsheets and email. No single step was broken, so nobody had ever filed it as a problem. The time was getting lost in between the steps, moving memos and approvals by email and analysis sitting in local files.
           </ProseSection>
 
           <DiagramFrame
@@ -420,12 +415,7 @@ function AnalystPlatform() {
 
           <ProseSection heading="How I framed it">
             I ran multi week discovery workshops with analysts and Product Owners
-            and mapped the process people actually followed rather than the one
-            that was documented. Then I built journey maps that quantified where
-            the hour went, across correspondence, form completion, data logging
-            and analysis. That moved the conversation from opinion to evidence,
-            and it set the MVP scope, because once you can see which part of the
-            flow is eating most of the time, the cut line picks itself.
+            and mapped the process people actually followed day to day, which was different from the one on paper. Then I built journey maps that showed where the hour went, across correspondence, form completion, data logging and analysis. Once we could see which part was eating most of the time, it was pretty clear what had to go in the MVP, and the conversation stopped being about opinions.
           </ProseSection>
 
           <PullQuote
@@ -434,21 +424,21 @@ function AnalystPlatform() {
           />
 
           <ProseSection heading="The decision I would defend">
-            The safe build was a faithful digital copy of the existing process.
-            It would have shipped fast and saved almost nothing. I argued instead
-            for redesigning around the decisions analysts were actually trying to
-            make, and for supporting both the linear path and the non linear one,
-            because real analyst work does not run in a straight line. The
-            journey maps are what won that argument. Without the numbers it would
-            have been my taste against theirs.
+            The safe option was to copy the existing process into software, it would have
+            shipped fast and saved almost nothing. I argued for designing
+            around the decisions analysts were actually making, and for
+            supporting both the straight path and the one that jumps around,
+            since analyst work rarely goes in a straight line. The journey
+            maps are what won that argument, without the numbers it would have
+            been my opinion against theirs.
           </ProseSection>
 
           <ProseSection heading="Working with engineering">
-            I embedded with the team from sprint 1 and delivered MVP screens in
-            parallel with backend development rather than handing over a finished
-            spec. We ran moderated usability sessions at MVP and at intervals
-            after launch, so assumptions got corrected while correcting them was
-            still cheap.
+            I was with the team from sprint 1 and delivered MVP screens while the backend
+            was being built, instead of handing over a finished spec at the
+            end. We ran moderated usability sessions at MVP and a few more
+            after launch, so wrong assumptions got fixed early while it was
+            still cheap to fix them.
           </ProseSection>
 
           <ProseSection heading="Where it landed">
@@ -487,12 +477,12 @@ function DesignSystemPlatform() {
               One source of truth for 3 audiences
             </h2>
             <p className="mt-5 max-w-[800px] text-[18px] leading-[1.65] text-body">
-              Moody's Ratings. I owned the design side of an internal design
-              system and pushed it from a component library into a shared
-              destination that designers, developers and Product Owners all
-              worked from. The measure was never how many components existed. It
-              was whether a developer starting a new application began from
-              something real instead of a blank file.
+              At Moody's Ratings I owned the design side of an internal design system, and
+              pushed it from a component library into one shared place that
+              designers, developers and Product Owners all worked from. What I
+              measured it by was whether a developer starting a new
+              application could start from something real instead of a blank
+              file, the number of components never mattered much.
             </p>
           </Reveal>
 
@@ -529,23 +519,21 @@ function DesignSystemPlatform() {
           />
 
           <ProseSection heading="The problem was never components">
-            There was a library. What there was not was a destination. Designers
-            worked in Figma, developers worked in code, and Product Owners had
-            nowhere to look at all. Three audiences, three versions of the truth,
-            and steady drift between them. Adding components would not have
-            fixed that, because the gap was in where people went, not in what
-            existed.
+            We had a library, but there was no one place to go. Designers worked in Figma,
+            developers worked in code, and Product Owners had nowhere to look
+            at all, so 3 groups had 3 versions of the truth and they kept
+            drifting apart. Adding more components wouldn't have fixed that,
+            the problem was where people went to find things.
           </ProseSection>
 
           <ProseSection heading="What I argued for, repeatedly">
-            One place. I pushed for a single destination where a designer could
-            read usage guidance, a developer could pull source, and a Product
-            Owner could see the pattern running live rather than described. I was
-            not the only person who wanted this and I did not build it alone, but
-            I was the one raising it in rooms until it happened, and the live
-            preview was the part I kept insisting on. A screenshot in
-            documentation tells you a pattern exists. A running preview tells you
-            what it does.
+            I pushed for one place where a designer could read the usage guidance, a
+            developer could pull the source, and a Product Owner could see the
+            pattern actually running. I wasn't the only one who wanted this
+            and I didn't build it alone, but I kept bringing it up in meetings
+            until it happened, and the live preview was the part I kept
+            pushing for, because a screenshot only shows that a pattern exists
+            and a running preview shows what it does.
           </ProseSection>
 
           <PullQuote
@@ -554,44 +542,42 @@ function DesignSystemPlatform() {
           />
 
           <ProseSection heading="The architecture decision">
-            I architected the tokens in 3 tiers, primitive, semantic and
-            typography, across more than 400 published variables. The reason was
-            leverage rather than tidiness. When brand or theming changed, the
-            change happened once at the primitive layer and travelled everywhere,
-            instead of turning into a hunt through hard coded styles. That
-            decision is why the system survived a company wide rebrand without
-            being rebuilt.
+            I set up the tokens in 3 tiers, primitive, semantic and typography, across
+            more than 400 published variables. When the brand or theme
+            changed, the change happened once at the primitive layer and
+            carried through everywhere, instead of hunting through hard coded
+            styles. That's why the system made it through a company wide
+            rebrand without being rebuilt.
           </ProseSection>
 
           <ProseSection heading="Building inside a system I did not define">
-            During the 2023 to 2024 rebrand I represented the technology design
-            team in an effort spanning roughly 15,000 people and several design
-            teams. Brand guidance came down finished and my job was to translate
-            it into the system so product designers never had to think about it.
-            That is a different discipline from authoring a system. It is working
-            within constraints somebody else set, at enterprise scale, without
-            breaking the teams downstream of you.
+            During the 2023 to 2024 rebrand I represented the technology design team in an
+            effort that spanned roughly 15,000 people and several design
+            teams. The brand guidance came down finished, and my job was to
+            translate it into the system so product designers never had to
+            think about it. It's different work from building a system
+            yourself, you're working inside rules somebody else set, at a big
+            scale, without breaking the teams that depend on you.
           </ProseSection>
 
           <ProseSection heading="Tables versus cards">
-            Our users were analysts who live in spreadsheets, so tables felt
-            native and we carried a table heavy pattern into most applications.
-            But familiar is not the same as effective. Where the task was
-            scanning and comparing rather than reading rows, I pushed cards
-            instead, and wrote the guidance for choosing between them. The
-            judgment call was not which control looked better. It was which one
-            matched the task the analyst was actually doing.
+            Our users were analysts who live in spreadsheets, so tables felt familiar to
+            them and we carried a table heavy pattern into most applications.
+            When the task was scanning and comparing, cards worked better, so
+            I pushed for cards there and wrote the guidance on when to use
+            which. Which one to use came down to what the analyst was actually
+            trying to do.
           </ProseSection>
 
           <ProseSection heading="Accessibility as a default, not a review step">
-            I helped set WCAG 2.1 AA as the target and then built compliance into
-            the components themselves, hand curating color contrast pair by pair
-            so that contrast, focus states, ARIA labelling and field validation
-            shipped correct out of the box. I also established a multi signal
-            error pattern, field level messaging pairing color with an icon
-            rather than color alone, reinforced by page level alerts. If
-            accessibility depends on every designer remembering, it fails. If it
-            is in the component, it holds.
+            I helped set WCAG 2.1 AA as the target and then built it into the components
+            themselves, hand curating color contrast pair by pair, so
+            contrast, focus states, ARIA labels and field validation came out
+            right by default. I also set up an error pattern that uses more
+            than one signal, field level messages that pair color with an
+            icon, backed up by page level alerts. If accessibility depends on
+            every designer remembering it, it gets missed, so it has to live
+            in the component.
           </ProseSection>
 
           <DiagramFrame
@@ -607,25 +593,23 @@ function DesignSystemPlatform() {
             They set up their environment, went to the documentation site, chose
             an app shell that fit the use case, and pulled source alongside the
             designer working on the same pattern. Structure and setup were
-            already decided, so the team began well into the build rather than
-            at zero.
+            already decided, so the team started well into the build instead of from zero.
           </ProseSection>
 
           <div className="mt-8 border-t border-rule-strong pt-8">
             <p className="text-[13px] leading-[1.65] text-caption">
-              Credit where it belongs. The system and the documentation platform
-              were team work, built with a lead design system engineer, a design
-              partner I co-led the Figma migration with, and the designers who
-              used and pressured it. My part was the design side ownership, the
-              token architecture, and the argument for a single destination.
+              The system and the documentation platform were team work, built with a lead
+              design system engineer, a design partner I co-led the Figma
+              migration with, and the designers who used it and pushed on it.
+              My part was owning the design side, the token architecture, and
+              pushing for one shared place.
             </p>
             <p className="mt-3 text-[12px] leading-[1.5] text-caption">
               AI: none in the system itself. Components, tokens and usage
               guidance were built by hand, first in Axure and then rebuilt in
               Figma, with the token architecture worked out over several
               iterations. Claude Code, run in a VS Code terminal, came in at the
-              end, generating HTML prototypes against the finished system, which
-              is what led to the AI-assisted editor in case study 03.
+              end, generating HTML prototypes against the finished system.
             </p>
             <p className="mt-3 text-[12px] leading-[1.5] text-caption">
               Work shown is redrawn and abstracted. No confidential assets,
@@ -721,12 +705,12 @@ function PitchCountApp() {
               The roles collapsed. Mine did not.
             </h2>
             <p className="mt-5 max-w-[800px] text-[18px] leading-[1.65] text-body">
-              A pitch count app for a youth baseball team, built in September 2026
-              and in use at real games. The league caps how many pitches a child
-              may throw in a day and sets mandatory rest before he can pitch
-              again, so a wrong count forfeits the game and risks a child's arm.
-              It runs on a phone in a dugout, one handed, in the sun. It's one
-              coach's tool for one team, not a product. The point is the method.
+              A pitch count app for a youth baseball team, built in September 2026 and used
+              at real games. The league caps how many pitches a kid can throw
+              in a day and requires rest before he can pitch again, so a wrong
+              count can forfeit the game and put a kid's arm at risk. It runs
+              on a phone in the dugout, one handed, in the sun. It's one
+              coach's tool for one team, I'm showing it for how it was built.
             </p>
           </Reveal>
 
@@ -769,19 +753,19 @@ function PitchCountApp() {
           <ScreenStrip />
 
           <ProseSection heading="What it replaced">
-            Before the app: a paper scorebook, a handheld umpire clicker, and the
-            rest day math done from memory. The cap and the rest window both
-            depend on the count, so the math runs on every pitch, while someone
-            is talking at you and the next batter is walking up.
+            Before the app it was a paper scorebook, a handheld umpire clicker, and the
+            rest day math done from memory. The cap and the rest days both
+            depend on the count, so the math runs on every pitch, while
+            someone is talking to you and the next batter is walking up.
           </ProseSection>
 
-          <ProseSection heading="Nine roles, three participants">
-            On a normal team this would be 9 people: product owner, UX designer,
-            design systems, business analyst, front end engineer, QA, independent
-            verification, accessibility, and field testing. Here there were 3
-            participants: me, Claude in chat, and Claude Code. They did the
-            executing. I did the deciding. Neither of them made a scope call or
-            signed anything off.
+          <ProseSection heading="9 roles, 3 participants">
+            On a normal team this would be 9 people, product owner, UX designer, design
+            systems, business analyst, front end engineer, QA, independent
+            verification, accessibility and field testing. Here it was 3, me,
+            Claude in chat and Claude Code. They did the building and I made
+            the decisions, neither of them made a scope call or signed
+            anything off.
           </ProseSection>
 
           <Reveal className="w-full">
@@ -791,32 +775,61 @@ function PitchCountApp() {
             <p className="mt-3.5 max-w-[800px] text-[16px] leading-[1.65] text-body">
               Claude built the design system in Figma, 12 component sets and 74
               states in light and dark, with every color an alias and no raw hex
-              anywhere. I set its direction and corrected it where it drifted,
-              including restructuring the token system against a standard I'd used
-              professionally, and moving a control to where I actually looked for
-              it rather than where taxonomy said it belonged. I also overruled a
-              suggested backup before a bulk write, where the caution cost more
-              than it saved.
+              anywhere. I set the direction and corrected it when it drifted, I restructured the token system to match a standard I'd used at work, and moved a control to where I actually looked for it instead of where the categories said it belonged. I also said no to a backup it suggested before a bulk write, it wasn't worth the time there.
             </p>
             <p className="mt-4 max-w-[800px] text-[16px] leading-[1.65] text-body">
-              It overruled me once, with evidence. I chose a dark mode blue that
-              measured 1.88:1 against its own background. The label on it would
-              have been readable and the button would have had no shape. A
-              different step passed both.
+              It overruled me once, and it had the numbers. I picked a dark mode blue that
+              measured 1.88:1 against its own background, the label would have
+              been readable but the button would have had no visible edge. A
+              different step in the scale passed both.
+            </p>
+          </Reveal>
+
+          <Reveal className="w-full">
+            <h3 className="max-w-[800px] font-sans font-semibold text-[20px] leading-[1.4] text-heading">
+              One correction, from the commit history
+            </h3>
+            <div className="mt-5 grid max-w-[1040px] grid-cols-1 gap-5 md:grid-cols-2">
+              <figure className="rounded-[4px] border border-hairline bg-panel p-6">
+                <figcaption className="text-[12px] uppercase leading-[1.5] tracking-[0.06em] text-caption">
+                  Claude's first version · CHALK-151
+                </figcaption>
+                <blockquote className="mt-3 text-[15px] leading-[1.65] text-body">
+                  "So the card is present in both states rather than only during a
+                  game, and Share stays reachable on a day with no game, where the
+                  card reads No game scheduled today."
+                </blockquote>
+              </figure>
+              <figure className="rounded-[4px] border border-accent/60 bg-panel p-6">
+                <figcaption className="text-[12px] uppercase leading-[1.5] tracking-[0.06em] text-accent">
+                  After my correction · CHALK-151 revised
+                </figcaption>
+                <blockquote className="mt-3 text-[15px] leading-[1.65] text-body">
+                  "Share availability is about the roster today against whatever
+                  comes next. Dan sends it after a game AND on a Friday when someone
+                  asks who is good for Saturday."
+                </blockquote>
+              </figure>
+            </div>
+            <p className="mt-5 max-w-[800px] text-[16px] leading-[1.65] text-body">
+              Claude tied Share to the game, which made sense on paper, but I send
+              availability on Fridays too when someone asks who's good for
+              Saturday, so it belongs with the roster, and a day with no game
+              shouldn't need a card just to hold a button.
             </p>
           </Reveal>
 
           <ProseSection heading="Intent before code">
-            Every ticket went through the same loop, about 40 times in 11 days. I
-            saw a problem, on the field or while using it, and said it in my own
-            words. Claude wrote an intent file: the problem, the decisions and who
-            made them, and how it would be verified. I corrected anything that
-            read as Claude's understanding rather than mine. Claude Code built it
-            and proved each test could fail. Claude verified the live app, never
-            the build report. Then I tested it on my phone, at a game. Notion was
-            the board of record, with backlog, ready, in progress, blocked and
-            done, and the intent files live in git, so every decision has a date
-            and a history.
+            Every ticket went through the same loop, about 40 times in 11 days. I'd see a
+            problem, on the field or while using it, and describe it in my own
+            words. Claude wrote an intent file with the problem, the decisions
+            and who made them, and how it would be checked, and I corrected
+            anything that read like Claude's understanding instead of mine.
+            Claude Code built it and proved each test could fail, Claude
+            checked the live app and not just the build report, and then I
+            tested it on my phone at a game. Notion was the board, with
+            backlog, ready, in progress, blocked and done, and the intent
+            files live in git, so every decision has a date and a history.
           </ProseSection>
 
           <DiagramFrame
@@ -828,7 +841,7 @@ function PitchCountApp() {
           </DiagramFrame>
 
           <ProseSection heading="A green check is not evidence">
-            Six times a test passed while looking at the wrong thing. A stale
+            6 times a test passed while looking at the wrong thing. A stale
             local server serving an old build. A check reading the previous frame.
             A syntax checker parsing a 743 byte file instead of the 89 KB one,
             which let 2 edits through with unbalanced braces.
@@ -840,30 +853,34 @@ function PitchCountApp() {
           />
 
           <ProseSection heading="Only one of us could go outside">
-            The data model was wrong, and only a field test found it. The app
-            tracked players and pitch counts, which are nouns. A game is a
-            sequence of moments: who is pitching now, who is catching now, which
-            inning. The rule that bites hardest, that a catcher who has caught
-            more than 3 innings cannot then pitch, is about a moment, and the app
-            had nowhere to put it. No tooling surfaced that. Standing in a dugout
-            did.
+            The data model was wrong, and only using it at a game showed it. The app
+            tracked players and pitch counts, but a game is a string of
+            moments, who is pitching right now, who is catching, which inning.
+            The rule that matters most, that a catcher who has caught more
+            than 3 innings can't pitch after, is about a moment, and the app
+            had nowhere to put it. None of the tools caught that, I caught it
+            standing in the dugout.
           </ProseSection>
 
           <ProseSection heading="Where it landed">
-            Live and in use at real games, for one team. Some of the sharpest bugs
-            were found by me using it, not by tooling. It cost 2 Claude
-            subscriptions, a domain, and 11 evenings. What I'd claim from it isn't
-            speed, since 11 days came from one project, in a domain I already
-            knew, with scope I controlled completely. What I'd claim is where the
-            line sits. The machines can execute almost everything. Deciding and
-            field testing still don't delegate.
+            Live and used at real games, for one team. Some of the sharpest bugs I found
+            myself just using it, the tooling missed them. It cost 2 Claude
+            subscriptions, a domain and 11 evenings. I wouldn't read speed
+            into it, it was one project in a domain I already knew, with scope
+            I fully controlled. What it showed me is where the line is, Claude
+            can build almost everything, but deciding and testing it out in
+            the real world are still on me.
           </ProseSection>
 
           <div className="mt-8 border-t border-rule-strong pt-8">
-            <p className="text-[13px] leading-[1.65] text-caption">
-              Built with Claude in chat and Claude Code. Screenshots use a demo
-              roster, and no real team or player names appear anywhere in this
-              case study.
+            <p className="text-[12px] leading-[1.5] text-caption">
+              AI: Claude in chat wrote the intent files and checked the live app,
+              Claude Code wrote the code and the tests. Every scope and rules
+              call, the design direction and the field testing were mine.
+            </p>
+            <p className="mt-3 text-[12px] leading-[1.5] text-caption">
+              Screenshots use a demo roster, and no real team or player names
+              appear anywhere in this case study.
             </p>
           </div>
         </div>
@@ -1059,8 +1076,8 @@ function FieldReportApp() {
           </ProseSection>
 
           <ProseSection heading="Testing it as a foreman">
-            Automated checks prove the code does what it says. They can't tell you
-            what it's like to fill out a report at the end of a long day on a job
+            The automated checks only prove the code does what it's supposed to, they
+            can't tell you what it's like to fill out a report at the end of a long day on a job
             site. So I enrolled a real company iPhone through Apple Business, set
             it up the way a foreman's phone would be, and signed in with a
             dedicated test account through Microsoft Authenticator. Then I used it
@@ -1104,6 +1121,11 @@ function FieldReportApp() {
               Designed in Figma and built with Claude in the desktop app. Client
               work shared without the client's name. The screens use an invented
               company, Ridgeline Interiors, with invented people and jobs.
+            </p>
+            <p className="mt-3 text-[12px] leading-[1.5] text-caption">
+              AI: Claude in the desktop app wrote the code and the automated
+              checks. The brief, the job list decision, the design in Figma, and
+              testing it as a foreman on a real iPhone were mine.
             </p>
           </div>
         </div>
