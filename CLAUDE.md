@@ -31,3 +31,7 @@ This is Dan Kachula's public portfolio. Copy and claims are approved by Dan word
 - The public resume is `public/Dan_Kachula_Resume.pdf`, served at kachdan.com/Dan_Kachula_Resume.pdf. The Resume link in the top menu opens it in a new tab. Never add a download attribute.
 - It must match Dan's current resume exactly, except it has no phone number. Email, LinkedIn, kachdan.com and Charlotte, NC stay.
 - When Dan updates his resume, replace this file with the new version, keeping the same filename and path. Run `python3 scripts/check_resume.py` before pushing. The deploy also runs it and stops if a phone number appears in the text or metadata.
+
+## Analytics
+
+- Microsoft Clarity (project "kachdan.com portfolio", id z91ei7wmsr, in Dan's kachdan@gmail.com Clarity account) is in the head of `index.html` and `field-report/index.html`. Any new page gets the same snippet.
