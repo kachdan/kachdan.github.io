@@ -263,24 +263,108 @@ function Hero() {
 
 /* ─── Testimonials ────────────────────────────────────────────────────── */
 
+// Full text of every LinkedIn recommendation from Feb 2014 on, word for word,
+// including the authors' own spelling and punctuation. Do not edit.
 const testimonials = [
   {
-    quote:
-      "I had the privilege of managing Dan for six years. His visual instincts are exceptional, and he pairs them with a depth of technical fluency that makes him unusually effective as a partner to engineering. What I value most about Dan, though, is how he leads.",
     name: "Mandy Linton",
     role: "Product Experience Executive. Managed Dan for 6 years at Moody's Ratings",
+    quote: [
+      "I had the privilege of managing Dan for six years on the UX and Insights organization at Moody's Ratings. Dan is a rare talent. His visual instincts are exceptional, and he pairs them with a depth of technical fluency that makes him unusually effective as a partner to engineering. He led the full modernization of our design system, rebuilding dozens of components and hundreds of patterns, and was instrumental in our broader Moody's re-brand, partnering with the enterprise brand team to shape everything from iconography to how type and color show up across the platform.",
+      "What I value most about Dan, though, is how he leads. He has a gift for making everyone in a room feel heard. He draws out perspectives that might otherwise go unspoken, weighs them fairly, and guides a conversation toward a decision with quiet authority rather than force. He runs workshops and design critiques that people actually want to attend, and he consistently finds ways to reduce friction between teams. He is also genuinely forward-looking, actively bringing AI into how designers and engineers work together rather than waiting to see what happens.",
+      "Dan is the kind of designer and leader who raises the standard for everyone around him. He would be an asset to any team he joins, and I recommend him without reservation.",
+    ],
   },
   {
-    quote:
-      "He dived headfirst into working with developers to build AI-assisted development tools and easily applied those workflows to build new design system components with incredible speed and efficiency. He frequently and patiently mentored engineering team members on user experience principles.",
+    name: "Tracy Nunnaley",
+    role: "Experience Design AVP, Design Systems at Moody's Ratings",
+    quote: [
+      "I worked alongside Dan for several years on our enterprise design system, where he was instrumental in its evolution and modernization. As my closest design partner, I saw firsthand the thought, care, and creativity he brought to every aspect of our work. His combination of design systems expertise, visual design talent, and technical understanding made him an invaluable collaborator.",
+      "Together, we modernized our design system and evolved it to support AI-enabled design workflows. Dan was always willing to explore new ideas, embrace emerging tools, and think through challenges from both the designer's and engineer's perspective. His contributions helped us build a stronger foundation that better served teams across the organization.",
+      "What I appreciated most about working with Dan was our partnership. I could always count on him to bring thoughtful feedback, challenge ideas constructively, and stay focused on finding the best solution. He's collaborative, dependable, and the kind of teammate who elevates the work of everyone around him.",
+    ],
+  },
+  {
     name: "Adisa Collis",
     role: "AVP at Moody's Ratings",
+    quote: [
+      "I can't recommend Dan highly enough! He has a brilliant eye for design, deep UX expertise and a forward thinking approach to tools and workflows. He dived headfirst into working with developers to build AI-assisted development tools and easily applied those workflows to build new design system components with incredible speed and efficiency.",
+      "He frequently and patiently mentored engineering team members on user experience principles, which significantly elevated the quality of what we shipped.",
+      "Even amid the turmoil of daily demands, he never lost sight of the bigger picture, or the end user. He has a unique gift for keeping the core mission front and center for the entire team.",
+      "Any team building complex, scalable systems would be lucky to have him on board!",
+    ],
   },
   {
-    quote:
-      "Dan is the definition of cool under pressure. He is impeccably polite and an active listener. I've seen him interact with difficult partners with grace and understanding.",
+    name: "Hilda Ziyi Wang",
+    role: "Product Designer. Worked with Dan at Moody's Ratings",
+    quote: [
+      "Dan is a great designer who combines strong attention to detail with a systems-thinking approach. He is innovative, collaborative, and thoughtful in how he solves design problems. I really enjoyed working with him and would highly recommend him to any team looking for a detail-oriented and innovative designer!",
+    ],
+  },
+  {
+    name: "Cameron Womack",
+    role: "Strategist, Product Designer at Next Street. Worked with Dan at Moody's",
+    quote: [
+      "I worked with Dan at Moody's for four years, and in that time he established himself as a great resource for design feedback, a thoughtful and creative art director, and a highly impactful leader on the design team. As a designer/art director, Dan is extremely attentive to detail, and at Moody's he constantly worked with the designers on our team to deliver the highest quality output. I know that with Dan's commitment to his craft and his capability to lead and work with others, he will be an asset wherever he goes.",
+    ],
+  },
+  {
+    name: "Oren Dayan",
+    role: "Executive Director, Experience Design at JP Morgan Chase. Worked with Dan at Moody's Ratings",
+    quote: [
+      "Dan is truly the secret weapon behind our teams success. I have been lucky enough to work with Dan as visual design lead for over a year. In that time, Dan has taken the time to help shape and polish my skillset to a whole new level. The work we have done together has wowed our business partners time after time. I can truly say I am a more successful designer because of the time Dan has taken to mentor and guide me. It is without hesitation that I say Dan is truly a gift to our team and our company.",
+    ],
+  },
+  {
     name: "Andrew Chipley",
     role: "Senior Lead Product Designer, Executive Director at Wells Fargo",
+    quote: [
+      "Dan is the definition of cool under pressure. He is impeccably polite and an active listener. I've seen him interact with difficult partners with grace and understanding. He's an incredibly talented designer ... who constantly works to continue to grow and learn. He's quickly rising to the top of his industry. You're going to want him on your team. He's an absolute machine when it comes to cranking out deliverables, mock-ups, redlines, and specs.",
+      "In addition, he's always the best dressed cat in the office. Almost makes me embarrassed to wear my baseball cap.",
+    ],
+  },
+  {
+    name: "Harold Weaver",
+    role: "UX Lead at Beroe Inc. Worked with Dan at Wells Fargo",
+    quote: [
+      "Dan is a rockstar designer! I've had the privilege of partnering with him in several high profile projects and can say he is a professional who knows his craft well. He is an effective communicator and his work is always thoughtful, top-notch and on time. If you haven't met him, you should.",
+    ],
+  },
+  {
+    name: "Cortney Brown",
+    role: "Experience Design Manager at Wells Fargo",
+    quote: [
+      "There are certain colleagues whom everyone wants on their team. Dan Kachula is one of those colleagues. I was lucky enough to work with Dan when he was a visual designer on the Digital Experience Design (DxD) team at Wells Fargo. As team lead, it was refreshing for me to know that any time I had a question or needed a project completed, Dan was there to assist.",
+      "Not only is Dan approachable, collaborative, and friendly, he's also detail-oriented, knowledgeable, and quick to complete deliverables. He's multi-talented and switches gears easily: one minute he could be creating a flawless visual design and the next minute discussing code with development. I hope to work with Dan again in the future and would recommend him to anyone who wants a top notch visual designer who's well versed in their use of style guides, design components, color treatments, iconography, and much more.",
+    ],
+  },
+  {
+    name: "Devin Smith",
+    role: "Founder, Podium Studios. Worked with Dan at Wells Fargo",
+    quote: [
+      "Dan is a great guy and a sharp designer who represents excellence and thoughtfulness all the way through to his personal appearance. I thoroughly enjoyed working with him, and appreciated his warm spirit, attention to detail, and calm under fire. He is both a cultural and skillful asset to any team.",
+    ],
+  },
+  {
+    name: "Tevis Vandergriff, IV",
+    role: "Strategic Client Success Leader. Worked with Dan at Mergent",
+    quote: [
+      "I had the privilege of working alongside Dan and he's a pro's pro. He can take an idea and turn it into an absolute piece of art. Dan is a very gifted and talented designer that transformed one of our products into a masterpiece. I hope to work with him again in the future.",
+    ],
+  },
+  {
+    name: "Justin White",
+    role: "Product Design Lead. Senior to Dan at CounterTack",
+    quote: [
+      "Working closely with Dan to develop a new interface was a delight. Dan is detail oriented and organized. His deliverables exceeded the requirements, and expanded upon our overall vision. Dan is well versed in usability and interaction design, as well as user feedback collection. His ability to iterate rapidly is a key component of his skill set. Dan brought a solid methodology to the team, with his ability to execute being a fundamental component to his success as a UX/IxD Designer.",
+    ],
+  },
+  {
+    name: "Will Bowers",
+    role: "Staff Software Engineer at Activision. Worked with Dan at CounterTack",
+    quote: [
+      "Dan is a gifted designer. He has a real knack for gathering requirements and turning them into stunning designs complete with interaction diagrams that take a lot of the pain out of implementation. Any design team would be fortunate to have Dan on board.",
+    ],
   },
 ];
 
@@ -295,26 +379,29 @@ function Testimonials() {
           </h2>
           <p className="mt-5 text-[17px] leading-[1.65] text-[#9ba2aa] dark:text-body">
             These are unedited recommendations from people who managed me, partnered with
-            me and shipped work alongside me, across 12 years and 3 companies.
+            me and shipped work alongside me, across 12 years and 4 companies.
           </p>
         </Reveal>
-        <div className="mt-14 grid grid-cols-1 gap-5 md:grid-cols-3">
-          {testimonials.map((t, i) => (
-            <Reveal key={t.name} delay={i * 90} className="h-full">
-              <figure className="flex h-full flex-col rounded-[4px] border border-white/10 bg-white/[0.06] p-8 shadow-[0_2px_8px_rgba(0,0,0,0.25)] dark:border-hairline dark:bg-muted-fill">
-                <blockquote className="text-[16px] leading-[1.65] text-[#c9cdd3] dark:text-body">
-                  {t.quote}
-                </blockquote>
-                <figcaption className="mt-auto pt-6">
-                  <p className="font-medium text-[13px] leading-[1.4] text-on-dark">
-                    {t.name}
-                  </p>
-                  <p className="mt-0.5 text-[12px] leading-[1.5] text-[#8b929a] dark:text-caption md:min-h-[36px]">
-                    {t.role}
-                  </p>
-                </figcaption>
-              </figure>
-            </Reveal>
+        <div className="mt-14 gap-5 md:columns-2 lg:columns-3">
+          {testimonials.map((t) => (
+            <figure
+              key={t.name}
+              className="mb-5 flex break-inside-avoid flex-col rounded-[4px] border border-white/10 bg-white/[0.06] p-7 shadow-[0_2px_8px_rgba(0,0,0,0.25)] md:p-8 dark:border-hairline dark:bg-muted-fill"
+            >
+              <blockquote className="space-y-4 text-[16px] leading-[1.65] text-[#c9cdd3] dark:text-body">
+                {t.quote.map((para, j) => (
+                  <p key={j}>{para}</p>
+                ))}
+              </blockquote>
+              <figcaption className="pt-6">
+                <p className="font-medium text-[13px] leading-[1.4] text-on-dark">
+                  {t.name}
+                </p>
+                <p className="mt-0.5 text-[12px] leading-[1.5] text-[#8b929a] dark:text-caption">
+                  {t.role}
+                </p>
+              </figcaption>
+            </figure>
           ))}
         </div>
         <p className="mt-12 text-[12px] leading-[1.5] text-[#8b929a] dark:text-caption">
